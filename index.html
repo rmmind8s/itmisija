@@ -62,18 +62,17 @@ html,body{
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1024px;        /* ribojama pagal nuotraukos plotį */
-  margin: 0 auto;           /* centre ekrane */
   overflow: hidden;
-  height: 65vh;             /* fiksuotas aukštis pagal ekraną */
+  max-height: 65vh;       /* ribotas aukštis */
 }
 
 /* Nuotrauka */
 .hero-img {
-  width: 100%;
-  height: 100%;             /* užima visą header aukštį */
-  object-fit: cover;        /* pilnai užpildo container'į */
-  object-position: top center; /* viršus visada matomas */
+  width: 100%;             /* per visą ekraną */
+  height: auto;            /* proporcingas aukštis */
+  max-height: 65vh;        /* ne didesnė nei 65% ekrano aukščio */
+  object-fit: cover;       /* užpildo visą plotą, centravimas */
+  object-position: top center; /* nuotraukos viršus visada matomas */
   display: block;
 }
 
@@ -83,7 +82,7 @@ html,body{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 35%;              /* gradiento aukštis */
+  height: 35%;             /* gradiento aukštis */
   background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
   pointer-events: none;
   z-index: 1;
@@ -92,14 +91,14 @@ html,body{
 /* Tekstas nuotraukos apačioje */
 .hero-text {
   position: absolute;
-  bottom: 0;                /* ties nuotraukos apačia */
+  bottom: 0;               /* ties nuotraukos apačia */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: #fff;
   padding: 1rem;
   z-index: 2;
-  width: 90%;               /* nesiplečia už nuotraukos kraštų */
+  width: 90%;              /* nesiplečia už nuotraukos kraštų */
 }
 
 .hero-text h2 {
@@ -121,6 +120,7 @@ html,body{
     font-size: 1rem;
   }
 }
+
 
 
 
