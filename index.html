@@ -58,22 +58,27 @@ html,body{
 
 
 
-/* Header container */
+/* Hero container */
 .hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  max-height: 65vh;       /* ribotas aukštis */
+  max-width: 1024px;        /* riboja nuotraukos plotį */
 }
 
 /* Nuotrauka */
 .hero-img {
-  width: 100%;             /* per visą ekraną */
-  height: auto;            /* proporcingas aukštis */
-  max-height: 65vh;        /* ne didesnė nei 65% ekrano aukščio */
-  object-fit: cover;       /* užpildo visą plotą, centravimas */
-  object-position: top center; /* nuotraukos viršus visada matomas */
+  width: 100%;              /* per visą container plotį */
+  height: auto;             /* proporcinga aukščio išlaikymas */
+  max-height: 65vh;         /* neviršija 65% ekrano aukščio */
   display: block;
+  object-fit: cover;
+  object-position: top center; /* viršus visada matomas */
 }
 
 /* Gradientas nuotraukos apačioje */
@@ -82,7 +87,7 @@ html,body{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 35%;             /* gradiento aukštis */
+  height: 35%;              /* gradiento aukštis */
   background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
   pointer-events: none;
   z-index: 1;
@@ -91,14 +96,14 @@ html,body{
 /* Tekstas nuotraukos apačioje */
 .hero-text {
   position: absolute;
-  bottom: 0;               /* ties nuotraukos apačia */
+  bottom: 0;                /* ties nuotraukos apačia */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: #fff;
   padding: 1rem;
   z-index: 2;
-  width: 90%;              /* nesiplečia už nuotraukos kraštų */
+  width: 90%;               /* nesiplečia už nuotraukos kraštų */
 }
 
 .hero-text h2 {
@@ -120,6 +125,7 @@ html,body{
     font-size: 1rem;
   }
 }
+
 
 
 
@@ -197,13 +203,16 @@ footer{
 <body>
 
 <header class="hero">
-  <img src="./mrpfp.webp" alt="Profilio nuotrauka" class="hero-img">
-  <div class="hero-gradient"></div>
-  <div class="hero-text">
-    <h2>Mindaugas R.</h2>
-    <p>Informacinių technologijų specialistas</p>
+  <div class="hero-container">
+    <img src="./mrpfp.webp" alt="Profilio nuotrauka" class="hero-img">
+    <div class="hero-gradient"></div>
+    <div class="hero-text">
+      <h2>Mindaugas R.</h2>
+      <p>Informacinių technologijų specialistas</p>
+    </div>
   </div>
 </header>
+
 
 
 <main>
