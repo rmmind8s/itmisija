@@ -28,18 +28,20 @@
             flex-direction: column;
         }
 
-        /* NUOTRAUKOS DALIS */
         .photo-container {
             position: relative;
-            height: 50vh;
+            height: 60vh;         /* didesnis aukštis */
+            max-height: 600px;    /* ribojame maksimalų aukštį dideliuose ekranuose */
             overflow: hidden;
         }
-
+        
         .photo-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: cover;    /* visą konteinerį užpildo, bet nesutrumpina */
+            object-position: top; /* kad viršutinė dalis nebūtų nukerpama */
         }
+
 
         /* VARDAS + PAVARDĖ ANT NUOTRAUKOS */
         .name-overlay {
