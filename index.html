@@ -33,9 +33,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="ITklinika" />
 <link rel="manifest" href="./favicon/site.webmanifest" />
-
-
+    
 <style>
+    
 :root {
     --theme-color:#676767;
     --theme-dark:#555;
@@ -55,38 +55,77 @@ html,body{
     color:#333;
 }
 
-header{
-    position:relative;
-    height:60%;
-    width:100%;
-    overflow:hidden;
-    background:var(--theme-color);
-    display:flex;
-    justify-content:center;
+/* Header container */
+.hero {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;       /* ribojamas pagal nuotraukos dydį */
+  margin: 0 auto;          /* centre ekrane */
+  overflow: hidden;
 }
 
-header img{
-    margin:auto;
-    width:100%;
-    max-width:600px;
-    object-fit:contain;
+/* Nuotrauka */
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: top center; /* viršus visada matomas */
 }
 
-.header-content{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    align-items:center;
-    background:rgba(0,0,0,.4);
-    color:#fff;
-    text-align:center;
+/* Gradientas nuotraukos apačioje */
+.hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;  /* gradiento aukštis */
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  pointer-events: none;
+  z-index: 1;
 }
 
-header h2{margin:.5rem 0}
+/* Tekstas nuotraukos apačioje */
+.hero-text {
+  position: absolute;
+  bottom: 0;               /* ties nuotraukos apačia */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  z-index: 2;
+  width: 90%;              /* kad tekstas nesiplėstų už nuotraukos kraštų */
+}
 
-.info{color:#ffffff77;margin-left:.15em}
+.hero-text h2 {
+  font-size: 2rem;
+  margin: 0.2rem 0;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Responsyvus tekstas mobiliems įrenginiams */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+    
 
 #description{
     max-width:33vh;
@@ -161,14 +200,13 @@ footer{
 
 <body>
 
-<header>
-<img src="./mrpfp.webp" alt="Profilio nuotrauka">
-<div class="header-content">
-<h2>
-Mindaugas R.
-</h2>
-<p>Informacinių technologijų specialistas</p>
-</div>
+<header class="hero">
+  <img src="./mrpfp.webp" alt="Profilio nuotrauka" class="hero-img">
+  <div class="hero-gradient"></div>
+  <div class="hero-text">
+    <h2>Mindaugas R.</h2>
+    <p>Informacinių technologijų specialistas</p>
+  </div>
 </header>
 
 <main>
