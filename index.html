@@ -35,143 +35,22 @@
 <link rel="manifest" href="./favicon/site.webmanifest" />
     
 <style>
-    
-:root {
-    --theme-color:#676767;
-    --theme-dark:#555;
-    --theme-white:#fff;
-    --notification-bottom:0.75rem;
-}
-
-*{box-sizing:border-box}
-
-html,body{
-    height:100%;
-    margin:0;
-    font-family:Arial,sans-serif;
-    display:flex;
-    flex-direction:column;
-    background:#f0f0f0;
-    color:#333;
-}
-
-/* Hero wrapper */
-.hero {
-  width: 100%;
-  display: flex;
-  justify-content: center; 
-  background-color: #000; /* jei ekrano plotis didesnis nei nuotrauka */
-}
-
-/* Container nuotraukai ir tekstui */
-.hero-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-}
-
-/* Nuotrauka */
-.hero-img {
-  width: 100%;       /* užima visą container plotį */
-  height: auto;      /* proporcinga */
-  max-width: 1024px; /* riboja plotį */
-  display: block;
-}
-
-/* Desktop: ribojamas aukštis 65vh */
-@media (min-width: 768px) {
-  .hero-img {
-    max-height: 65vh;   /* ne didesnė nei 65% ekrano aukščio */
-    width: auto;        /* proporcinga pagal aukštį */
-
-
-
-
-
-
-
-main{
-    flex:1;
-    max-width:800px;
-    margin:0 auto;
-    text-align:center;
-}
-
-.phone{
-    font-size:2rem;
-    margin:1.5rem 0;
-}
-
-#copy{
-    font-size:2rem;
-    margin-left:.25em;
-    color:#595959;
-}
-
-ul{list-style:none;padding:0}
-li{margin:.5rem 0;font-size:2rem}
-
-#tel a{font-size:4rem;color:#00ca58}
-#sms a{color:#1f67ea}
-
-footer{
-    padding:1rem;
-    text-align:center;
-    background:#fff;
-    border-top:1px solid #ccc;
-    font-size:.9rem;
-}
-
-#notification{
-    visibility:hidden;
-    color:var(--theme-white);
-    background:var(--theme-dark);
-    border-radius:5px;
-    padding:16px 30px;
-    text-align:center;
-    position:fixed;
-    left:50%;
-    bottom:var(--notification-bottom);
-    transform:translateX(-50%);
-}
-
-#notification.show{
-    visibility:visible;
-    animation:fadein .5s,fadeout .5s 2.5s;
-}
-
-@keyframes fadein{
-    from{bottom:0;opacity:0}
-    to{bottom:var(--notification-bottom);opacity:1}
-}
-
-@keyframes fadeout{
-    from{opacity:1}
-    to{bottom:0;opacity:0}
-}
+  
 </style>
+    
 </head>
 
 <body>
 
-<header class="hero">
-  <div class="hero-container">
-    <img src="./mrpfp.webp" alt="Profilio nuotrauka" class="hero-img">
-    <div class="hero-gradient"></div>
-    <div class="hero-text">
-      <h2>Mindaugas R.</h2>
-      <p>Informacinių technologijų specialistas</p>
-    </div>
-  </div>
+<header>
+    
+<img id="profile" src="./img.jpg" alt="Header Image">
+<div class="header-content">
+<h2>Pagalbos telefonas</h2>
+<p>Informacinių technologijų specialistas</p>
+</div>
+
 </header>
-
-
-
-
-
-
 
 <main>
 <div class="phone">
