@@ -38,9 +38,8 @@
     
 <style>
 :root {
-    --main: #999999;
-    --dark: #555555;
-    --white: #ffffff;
+    --theme-dark: #555555;
+    --theme-white: #ffffff;
     --notification-bottom: 0.75rem;
 }
 
@@ -89,26 +88,11 @@ header img {
     text-align: center;
 }
 
-header h1 {
-    margin: 0.5rem 0;
-    font-size: 2rem;
-}
-
 header p {
     margin: 0;
     margin-bottom: 1rem;
     font-size: 1rem;
     color: #eee;
-}
-
-header a{
-    color: #ffffff;
-}
-
-header p a{
-    background-color: #00000077;
-    padding: 0.25em;
-    color: #00ca59;
 }
 
 .info{
@@ -217,7 +201,7 @@ li {
     position: fixed;
 
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
 }
 
 #notification.show {
@@ -244,20 +228,6 @@ li {
 @keyframes fadeout {
     from {bottom: var(--notification-bottom); opacity: 1;}
     to {bottom: 0; opacity: 0;}
-}
-
-#description {
-    max-width: 33vh;
-    background-color: rgba(255, 255, 255, 0.77);
-    padding: 1rem;
-    color: #eee;
-    margin-bottom: 0.5rem;
-    visibility: hidden;
-    color: #333333;
-}
-
-.deep {
-    margin-left: 0.5rem;
 }
     
 </style>
