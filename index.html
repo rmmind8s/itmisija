@@ -68,11 +68,16 @@ header {
     justify-content: center;
 }
 
-header img {
-    margin: auto;
-    width: 100%;
-    max-width: 500px;
-    object-fit: contain;
+.img-wrap {
+    position: relative;
+    width:100%;
+    max-width:500px;
+    margin:auto;
+}
+
+.img-wrap img {
+    width:100%;
+    display:block;
 }
 
 .header-content {
@@ -184,16 +189,19 @@ li {
 }
 
 #infoBtn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: white;
-    cursor: pointer;
-    z-index: 1001;
+    position:absolute;
+    top:0.75rem;
+    right:0.75rem;
+    background:rgba(0,0,0,0.5);
+    border:none;
+    font-size:1.5rem;
+    color:white;
+    cursor:pointer;
+    border-radius:50%;
+    width:40px;
+    height:40px;
 }
+
 
 /* MODAL */
 
@@ -243,11 +251,17 @@ li {
     <body>
     
     <header>
-        
-    <img id="profile" src="./img/mr-call.webp" alt="Header Image">
-    <button id="infoBtn" onclick="toggleModal()">
-        <i class="fa-solid fa-circle-info"></i>
-    </button>
+    
+    <div class="img-wrap">
+    
+        <img id="profile" src="./img/mr-call.webp" alt="Header Image">
+    
+        <button id="infoBtn" onclick="toggleModal()">
+            <i class="fa-solid fa-circle-info"></i>
+        </button>
+    
+    </div>
+
     <div id="description" class="modal">
         <div class="modal-content">
     
@@ -267,8 +281,7 @@ li {
         </div>
     </div>
     <div class="header-content">
-    <p id="description" style="visibility: hidden;">Visokeriopa IT pagalba ➕ kūrybiniai sprendimai ☁</p>
-    <h2>Pagalbos linija<a href="#" onclick="toggle_visibility('description');"><i class="fa-solid fa-circle-info info"></i></a></h2>
+    <h2>Pagalbos linija</h2>
     </div>
     
     </header>
