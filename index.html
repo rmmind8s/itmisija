@@ -246,6 +246,44 @@ li {
     cursor:pointer;
 }
 
+.phone{
+    font-size:2rem;
+    margin:1.5rem 0;
+}
+
+#copy{
+    font-size:2rem;
+    margin-left:.25em;
+    color:#595959;
+}
+
+#notification{
+    visibility:hidden;
+    color:var(--theme-white);
+    background:var(--theme-dark);
+    border-radius:5px;
+    padding:16px 30px;
+    text-align:center;
+    position:fixed;
+    left:50%;
+    bottom:var(--notification-bottom);
+    transform:translateX(-50%);
+}
+
+#notification.show{
+    visibility:visible;
+    animation:fadein .5s,fadeout .5s 2.5s;
+}
+
+@keyframes fadein{
+    from{bottom:0;opacity:0}
+    to{bottom:var(--notification-bottom);opacity:1}
+}
+
+@keyframes fadeout{
+    from{opacity:1}
+    to{bottom:0;opacity:0}
+}
 </style>
     
 </head>
@@ -291,7 +329,12 @@ li {
     </header>
     
         <main>
-            <h1> <span id="phone">+37061600055</span></h1>
+            <div class="phone">
+            <span id="phone">+37061600055</span>
+            <a id="copy" href="#" onclick="copy('phone');event.preventDefault();">
+            <i class="fa-solid fa-copy"></i>
+            </a>
+            </div>
             <ul>
                 <li id="tel"><a href="tel:+37061600055"><i class="fa-solid fa-square-phone-flip"></i></a></li>
                 <li id="whatsapp" class="app" ><a href="https://wa.me/37061600055"><i class="fa-brands fa-whatsapp"></i></a></li>
