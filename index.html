@@ -179,6 +179,11 @@ li {
     color: black;
 }
 
+#description ul {
+    list-style-type: none;
+    padding-inline-start: 2rem;
+}
+
 #infoBtn {
     position:absolute;
     top:0.75rem;
@@ -253,24 +258,25 @@ li {
     
     </div>
 
-    <div id="description" class="modal">
-        <div class="modal-content">
-    
-            <button class="close" onclick="toggleModal()">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-    
-            <p>IT pagalba ➕ efektyvūs sprendimai ☁ kai:</p>
-            <ul>
-                <li>📡 Neveikia internetas</li>
-                <li>🖥️ Kompiuteris ar programa „stringa“</li>
-                <li>⚠️ Sistema meta klaidas</li>
-                <li>📱 Telefonas veikia ne taip, kaip turėtų</li>
-                <li>🧘 Norisi, kad būtų paprasčiau</li>
-            </ul>
-            
+        <div id="description" class="modal" onclick="outsideClick(event)">
+            <div class="modal-content">
+        
+                <button class="close" onclick="toggleModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+        
+                <p>IT pagalba ➕ efektyvūs sprendimai ☁ kai:</p>
+                <ul>
+                    <li>📡 Neveikia internetas</li>
+                    <li>🖥️ Kompiuteris ar programa „stringa“</li>
+                    <li>⚠️ Sistema meta klaidas</li>
+                    <li>📱 Telefonas veikia ne taip, kaip turėtų</li>
+                    <li>🧘 Norisi, kad būtų paprasčiau</li>
+                </ul>
+                <p style="margin:0;">#Technologijos #Procesai #Žmonės</p>
+            </div>
         </div>
-    </div>
+
     <div class="header-content">
     <h2>Pagalbos linija</h2>
     </div>
@@ -312,7 +318,22 @@ li {
         document.getElementById("description")
         .classList.toggle("show");
     }
+
+    function outsideClick(e){
+        if(e.target.id === "description"){
+            toggleModal();
+        }
+    }
     
+    document.addEventListener("keydown", function(e){
+        if(e.key === "Escape"){
+            let modal = document.getElementById("description");
+            if(modal.classList.contains("show")){
+                toggleModal();
+            }
+        }
+    });
+
 </script>
 </body>
 </html>
